@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+    <ul>
+        {% if not empty_list %}
+            <h1>Related Pages to '{{search_entry}}'</h1>
+            <hr>
+            {% for page in related_pages %}
+                <li><a href="wiki/{{page}}">{{page}}</a></li>
+            {% endfor %}
+        {% endif %}
+        {% if empty_list %}
+            <h1>Oops! No search results match '{{search_entry}}'</h1>
+            <hr>
+            <h3>Click <a href="{% url 'index' %}">here </a>to go to the Home Page.</h3>
+        {% endif %}
+    </ul>
+    <br>
+
+{% endblock %}

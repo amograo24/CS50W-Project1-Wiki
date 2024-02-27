@@ -1,0 +1,11 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+<h1>Oops! '{{title}}' Doesn't Exist.</h1>
+<hr>
+<p>Click <a href="{% url 'new_page' %}">here </a>if you want to create a new page.</p>
+{% endblock %}
